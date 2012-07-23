@@ -1,2 +1,2 @@
-require './cageme'
-run Sinatra::Application
+require './cageme.rb'
+run cageme
