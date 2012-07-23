@@ -17,6 +17,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rmagick
+  rmagick (~> 2.13.1)
   shotgun
   sinatra
