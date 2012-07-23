@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'rmagick'
 
-class Cageme << Sinatra::Base
+class Cageme < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '/public'
   Pic = Struct.new(:image, :width, :height)
 
