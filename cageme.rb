@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'rmagick'
+require 'RMagick'
 
 class Cageme < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '/public'
