@@ -23,12 +23,12 @@ class Cageme < Sinatra::Base
   
   def image_with_size(width, height)
     if width > 3000 || height > 3000
-      "The image you requested is too big; let's not spread Mr. Cage too thin."
+      imgResize = "The image you requested is too big; let's not spread Mr. Cage too thin."
     else
       img = random_cage
       imgResize = img.resize_to_fill(width, height)
-      return imgResize
     end
+    return imgResize
   end
 
   PICS = preload_images
@@ -49,8 +49,8 @@ class Cageme < Sinatra::Base
     height = params[:height].to_i
     
     image = image_with_size(width, height)
-    if image.nil?
-      "Something went wrong! Not the Bees!"
+    if image.class == String
+      image
     else
       content_type 'image/jpeg'
       image.to_blob
@@ -62,8 +62,8 @@ class Cageme < Sinatra::Base
     height = params[:height].to_i
     
     image = image_with_size(width, height)
-    if image.nil?
-      "Something went wrong! Not the Bees!"
+    if image.class == String
+      image
     else
       content_type 'image/jpeg'
       image = image.quantize(256, Magick::GRAYColorspace)
