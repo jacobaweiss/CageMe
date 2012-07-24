@@ -7,8 +7,8 @@ class Cageme < Sinatra::Base
 
   def self.preload_images
     images = []
-    Dir.entries('./public/images').collect{ |f| f if f =~ /\.jpg/ }.compact.each do |img|
-      pic = Magick::Image.read("./public/images/#{img}").first
+    Dir.glob('./public/images/*.jpg').each do |img|
+      pic = Magick::Image.read("#{img}").first
       p = Pic.new(pic, pic.columns, pic.rows)
       images.push p
     end
@@ -26,7 +26,7 @@ class Cageme < Sinatra::Base
   end
 
   get "/random" do
-    content_type 'image/jpg'
+    content_type 'image/jpeg'
     random_cage.to_blob
   end
 end
