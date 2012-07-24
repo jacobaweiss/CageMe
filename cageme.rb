@@ -56,4 +56,18 @@ class Cageme < Sinatra::Base
       image.to_blob
     end
   end
+  
+  get "/g/:width/:height" do
+    width = params[:width].to_i
+    height = params[:height].to_i
+    
+    image = image_with_size(width, height)
+    if image.nil?
+      "Something went wrong! Not the Bees!"
+    else
+      content_type 'image/jpeg'
+      image = image.quantize(256, Magick::GRAYColorspace)
+      image.to_blob
+    end
+  end
 end
