@@ -399,8 +399,6 @@ p.footer {
 
 #cagePic {
   padding: 10px;
-/*  border-left-style: solid;
-  border-width: 1px;*/
 }
 
 .portrait {
@@ -408,4 +406,14 @@ p.footer {
   border-radius: 10px;
   padding: 5px;
   background-color: rgba(235, 185, 68, .5);;
+}
+
+/* 404 Page */
+#error {
+  float: left;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+h2 {
+  text-align: center;
 }

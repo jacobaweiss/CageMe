@@ -33,6 +33,11 @@ class Cageme < Sinatra::Base
 
   PICS = preload_images
   
+  #### Error Handling
+  not_found do
+    erb :page_not_found
+  end
+  
   #### Routes
 
   get "/" do
