@@ -49,6 +49,12 @@ class Cageme < Sinatra::Base
     random_cage.to_blob
   end
   
+  get "/g/random" do
+    content_type 'image/jpeg'
+    image = random_cage.quantize(256, Magick::GRAYColorspace)
+    image.to_blob
+  end
+  
   get "/:width/:height" do
     width = params[:width].to_i
     height = params[:height].to_i
