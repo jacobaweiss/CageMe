@@ -385,8 +385,17 @@ p {
   font-size: 2em;
 }
 
+p#explanation {
+  font-size: 1.2em;
+  text-align: center;
+  border-style: none;
+  border-radius: 10px;
+  background-color: rgba(256,256,256, .2);
+  padding: 10px;
+}
+
 p.footer {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 /* right side */
