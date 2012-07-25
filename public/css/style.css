@@ -354,6 +354,7 @@ body {
   background-color: rgba(256, 256, 256, .4);
   padding: 20px;
   margin-top: 60px;
+  margin-bottom: 60px;
   float: left;
 }
 
@@ -408,6 +409,11 @@ p.footer {
 
 #cagePic {
   padding: 10px;
+}
+
+img.front-page {
+  max-width: 100%;
+  height: auto;
 }
 
 .portrait {
