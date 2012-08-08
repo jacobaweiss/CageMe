@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'RMagick'
+require 'pry'
 
 class Cageme < Sinatra::Base
   # huge thanks/credit to https://github.com/JGaudette/PlaceDog
@@ -45,18 +46,27 @@ class Cageme < Sinatra::Base
   end
 
   get "/random" do
-    # content_type 'image/jpeg'
-    # random_cage.to_blob
-    
-    #new code to render a static, savable, linkable image
-    img = random_cage.filename[8..-1]
-    redirect "#{img}"
+    content_type 'image/jpeg'
+    random_cage.to_blob
   end
   
   get "/g/random" do
     content_type 'image/jpeg'
     image = random_cage.quantize(256, Magick::GRAYColorspace)
     image.to_blob
+  end
+  
+  get "/specific/:id" do
+    id = params[:id].to_i
+    id -= 1
+    if id >= PICS.size
+      "That's one too many Cages for you.  We only have #{PICS.size} pictures in here."
+    else
+      img = PICS[id].image
+      
+      content_type 'image/jpeg'
+      img.to_blob
+    end
   end
   
   get "/:width/:height" do
