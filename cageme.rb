@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'RMagick'
-require 'pry'
 
 class Cageme < Sinatra::Base
   # huge thanks/credit to https://github.com/JGaudette/PlaceDog
