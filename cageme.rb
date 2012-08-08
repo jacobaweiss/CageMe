@@ -45,8 +45,12 @@ class Cageme < Sinatra::Base
   end
 
   get "/random" do
-    content_type 'image/jpeg'
-    random_cage.to_blob
+    # content_type 'image/jpeg'
+    # random_cage.to_blob
+    
+    #new code to render a static, savable, linkable image
+    img = random_cage.filename[8..-1]
+    redirect "#{img}"
   end
   
   get "/g/random" do
