@@ -13,6 +13,6 @@ Images are pulled from:
 
 Please let me know if you are the creator/owner of any images and would like them removed.
 
-Many thanks to the [placedog source code](https://github.com/JGaudette/PlaceDog), without which I'd have been bass-ackwards on this one.
+Many thanks to the [placedog source code](https://github.com/JGaudette/PlaceDog), without which I'd have been lost on this one.
 
 This is still a work in progress, so please post in [Issues](https://github.com/jacobaweiss/CageMe/issues) if you would like to contribute or contact me.
